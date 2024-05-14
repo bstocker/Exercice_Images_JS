@@ -1,14 +1,15 @@
 <html>
 <head>
 <script>
+<script>
 function affichage(){
 	alert("Tout es OK !");
 }
 function cacher(){
-	document.getElementById('image1').style.display="None";
+	document.getElementById('DuTexte').style.display="None";
 }
 function presenter(){
-	document.getElementById('image1').style.display="Block";
+	document.getElementById('DuTexte').style.display="Block";
 }
 function controler(){
 	if(document.getElementById('Control').checked){
@@ -28,16 +29,7 @@ function controler(){
 <button onclick="presenter()">Presenter</button>
 <button onclick="cacher()">Cacher</button>
 <hr/>
-<p><input type="checkbox" id="Control">image1</p>
-<p><input type="checkbox" id="Control">image2</p>
-<p><input type="checkbox" id="Control">image3</p>
-if(document.getElementById('Control1').checked){
- document.getElementById('Image1').style.display="block";} 
- else {
-        document.getElementById('Image1').style.display="none";
-}
-
-
+<p>Option<input type="checkbox" id="Control"></p>
 <button onclick="controler()">Check</button>
 	
 <img id="image1" src="Image1.jpg" style="display:block" alt="img1">
