@@ -6,10 +6,10 @@ function affichage(){
 	alert("Tout es OK !");
 }
 function cacher(){
-	document.getElementById('DuTexte').style.display="None";
+	document.getElementById('image1').style.display="None";
 }
 function presenter(){
-	document.getElementById('DuTexte').style.display="Block";
+	document.getElementById('image1').style.display="Block";
 }
 function controler(){
 	if(document.getElementById('Control').checked){
@@ -25,7 +25,7 @@ function controler(){
 <h2>Boite de dialogue</h2>
 <button onclick="affichage()">Afficher</button>
 <hr/>
-<p id="DuTexte">Ma phrase de texte</p>
+<p id="image1">Ma phrase de texte</p>
 <button onclick="presenter()">Presenter</button>
 <button onclick="cacher()">Cacher</button>
 <hr/>
