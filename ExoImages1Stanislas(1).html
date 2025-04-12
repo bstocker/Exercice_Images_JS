@@ -1,0 +1,68 @@
+<html>
+<head>
+    <script>
+        let etat = {
+            chk1: false,
+            chk2: false,
+            chk3: false
+        };
+
+        function cacher(id) {
+            document.getElementById(id).style.display = "none";
+        }
+
+        function presenter(id) {
+            document.getElementById(id).style.display = "";
+        }
+
+        function affichage(checkbox) {
+            if (etat[checkbox]) {
+                presenter(checkbox.replace("chk","img"));
+            } else {
+                cacher(checkbox.replace("chk","img"));
+            }
+        }
+
+        function ecoute(checkbox) {
+
+            document.addEventListener("DOMContentLoaded", function (event) {
+                let selecteur = document.getElementById(checkbox);
+                selecteur.addEventListener('change', function (event) {
+                    if (selecteur.checked) {
+                        etat[checkbox] = true; 
+                    } else {
+                        etat[checkbox] = false;
+                    }
+                    affichage(checkbox);
+                });
+            });
+        }
+
+        ecoute("chk1");
+        ecoute("chk2");
+        ecoute("chk3");
+    </script>
+</head>
+<body>
+<h1>Image(s) à afficher</h1>
+<div>
+    <h2>Image 1</h2>
+    <input type="checkbox" id="chk1">
+    <h2>Image 2</h2>
+    <input type="checkbox" id="chk2">
+    <h2>Image 3</h2>
+    <input type="checkbox" id="chk3">
+</div>
+<div>
+    <img id="img1"
+         src="https://images.generated.photos/MNruB_GfAxPXKsGsawQd6gatWPG7agzvo_MLWP6adCQ/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/NTk1ODE5LmpwZw.jpg"
+         style="display:none"/>
+    <img id="img2"
+         src="https://images.generated.photos/Pzs5sbUYgHcqpLX8KAvFoPNxxALr0-whuPB4jzSnxew/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/Mjg1NjUwLmpwZw.jpg"
+         style="display:none"/>
+    <img id="img3"
+         src="https://images.generated.photos/CTL1nAwS98Ds2j4Sj_vfF5Xwqm_-ltRJ7iKUTwk08T8/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/OTM1MDgyLmpwZw.jpg"
+         style="display:none"/>
+</div>
+</body>
+</html>
